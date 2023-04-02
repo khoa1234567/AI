@@ -7,6 +7,8 @@ import threading
 import os
 import pickle
 
+window = tk.Tk()
+window.title("Hand Tracking")
 
 # --------------------- Phần xử lý nhận diện bàn tay và hiển thị lên camera ---------------------
 mp_duyet_tay = mp.solutions.hands
@@ -70,7 +72,6 @@ def save_hand_landmarks():
     print(f"Đã lưu dữ liệu vào file: {save_path}")
 
 
-# --------------------- Phần đọc file dữ liệu và hiển thị lên màn hình ---------------------
 # --------------------- Phần đọc file dữ liệu và hiển thị lên màn hình ---------------------
 def read_and_display_data():
     file_path = filedialog.askopenfilename(filetypes=[("XML files", "*.xml")])
@@ -162,8 +163,6 @@ def read_data_file(file_path):
     cap.release()
     cv2.destroyAllWindows()
 # --------------------- Tạo giao diện ---------------------
-window = tk.Tk()
-window.title("Hand Tracking")
 
 # Tạo label để hiển thị ảnh từ camera
 image_label = tk.Label(window)
