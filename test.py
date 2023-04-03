@@ -12,7 +12,7 @@ folder_path = os.getcwd()
 # Lấy danh sách tất cả các file trong thư mục
 all_files = os.listdir(folder_path)
 # Lọc ra các file có đuôi ".xml" và lưu vào danh sách "xml_files"
-xml_files = [f for f in all_files if f.endswith('.xml')]
+xml_files = [f for f in os.listdir() if f.endswith('.xml')]
 
 # Tạo cửa sổ để hiển thị hình ảnh
 cv2.namedWindow("Webcam")
@@ -113,4 +113,4 @@ def read_hand_landmarks_from_xml(xml_file):
         y = int(point.get("y"))
         landmarks.append((x, y))
     return landmarks
-@@
+
