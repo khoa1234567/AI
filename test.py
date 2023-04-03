@@ -113,3 +113,4 @@ def read_hand_landmarks_from_xml(xml_file):
         y = int(point.get("y"))
         landmarks.append((x, y))
     return landmarks
+@@
